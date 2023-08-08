@@ -29,6 +29,18 @@ Node *BuildTree(Node *root)
     root->right=BuildTree(root->right);
     return root;
 }
+void InorderTraversal(Node *root ,vector<int>& ans)
+{
+    
+    if(root == NULL)
+    {
+        return ;
+    }
+    InorderTraversal(root->left , ans);
+    ans.push_back(root->data);
+    InorderTraversal(root->right , ans);
+    
+}
 void LevelOrderTraversal(Node *root)
 {
     queue<Node *>q;
